@@ -1,19 +1,17 @@
-A3XAI - Final Version (Last edited: April 17, 2016)
+A3XAI - Unreleased files for final version of A3XAI, for Desolation Redux mod (NOT Exile Mod)
 =====
 
 Important
 ---
-This addon is no longer actively developed or supported in any way. Everything below this section is from the original Readme.
-This was the last and final release of A3XAI for A3 running the Exile mod and was never released to the public. 
-There is **absolutely no guarantee** that this version of A3XAI is bug or issue-free, especially after a year of non-development. Use at your own risk.
+This is a modified version of @SnarkIndustries (Face)'s A3XAI. This AI has been updated to work with Desolation Redux mod. There is absolutely no guarantee that this version of A3XAI is bug or issue-free.
 
 Introduction
 ---
-A3XAI is a roaming/ambient AI spawning addon for ArmA 3 Exile mod (http://www.exilemod.com/).
+A3XAI is a roaming/ambient AI spawning addon for ArmA 3 Exile mod (http://desolationredux.com/).
 
 Installing A3XAI
 ---
-1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/dayzai/A3XAI/releases
+1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/SirFrostingham/A3XAI-Final
 2. Locate the .zip file you downloaded and extract it to a folder.
 3. Open the extracted folder and open the Installation Package folder. Copy the contents of this folder (Addons, A3XAI_config.sqf, A3XAI_custom_defs.sqf)
 4. Navigate to your server's Arma 3 folder and open the @ExileServer folder.
