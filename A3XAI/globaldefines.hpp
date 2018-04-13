@@ -7,18 +7,18 @@
 #define PARACHUTE_OBJECT "Steerable_Parachute_F"
 #define RADIO_ITEM "ItemRadio" //A3XAI
 //#define RADIO_ITEM "EpochRadio0" //A3EAI
-#define PLAYER_UNITS "Exile_Unit_Player" //A3XAI
+#define PLAYER_UNITS "I_G_Survivor_F" //A3XAI
 //#define PLAYER_UNITS "Epoch_Male_F","Epoch_Female_F" //A3EAI
 #define LOOT_HOLDER_CLASS "GroundWeaponHolder" //A3XAI
 //#define LOOT_HOLDER_CLASS "WH_Loot" //A3EAI
 #define DEFAULT_UNIT_CLASSNAME "i_survivor_F"
 #define SPACE_FOR_OBJECT "Land_Coil_F"
-#define PLOTPOLE_OBJECT "Exile_Construction_Flag_Static" //A3XAI
+#define PLOTPOLE_OBJECT "DSR_Object_Workbench" //A3XAI
 //#define PLOTPOLE_OBJECT "PlotPole_EPOCH" //A3EAI
 #define GRENADE_AMMO_3RND "3Rnd_HE_Grenade_shell"
 #define GRENADE_AMMO_1RND "1Rnd_HE_Grenade_shell"
 #define FIRST_AID_ITEM_AI "FirstAidKit"
-#define FIRST_AID_ITEM_PLAYER "Exile_Item_InstaDoc" //A3XAI
+#define FIRST_AID_ITEM_PLAYER "DSR_Item_Bandage" //A3XAI
 //#define FIRST_AID_ITEM_PLAYER "FAK" //A3EAI
 #define NVG_ITEM_AI "NVGoggles_OPFOR"
 #define NVG_ITEM_PLAYER "NVGoggles" //A3XAI
@@ -196,12 +196,12 @@
 #define DYNAMIC_SPAWN_CHECK_FREQ 90
 
 //Other definitions
-#define PLAYER_GROUP_SIDE resistance //A3XAI
+#define PLAYER_GROUP_SIDE INDEPENDENT //A3XAI
 //#define PLAYER_GROUP_SIDE1 west //A3EAI
 //#define PLAYER_GROUP_SIDE2 east //A3EAI
 //#define AI_GROUP_SIDE resistance //A3EAI
 #define AI_VEHICLEWEAPON_EXPLOSIVERATING_LIMIT 0.9
-#define EXTERNAL_OBJECT_MONITOR_NAME "ExileSimulationMonitoredVehicles" //A3XAI
-#define SERVER_STARTED_INDICATOR "PublicServerIsLoaded" //A3XAI
+#define EXTERNAL_OBJECT_MONITOR_NAME "DS_var_finishedVehicles" //A3XAI
+#define SERVER_STARTED_INDICATOR "DS_var_finishedVehicles" //A3XAI
 //#define SERVER_STARTED_INDICATOR "EPOCH_BuildingSlotCount" //A3EAI
 

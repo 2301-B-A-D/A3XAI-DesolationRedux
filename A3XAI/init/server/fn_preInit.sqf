@@ -10,7 +10,7 @@
 if (!hasInterface && {!isDedicated}) exitWith {diag_log format ["A3XAI blocked execution of %1.",__FILE__];};
 
 if (isDedicated) then {
-	call compile preprocessFileLineNumbers "exile_server\bootstrap\fn_preInit.sqf";
+	//call compile preprocessFileLineNumbers "exile_server\bootstrap\fn_preInit.sqf";
 	//diag_log "Debug: Executing Exile server post init.";
 };
 

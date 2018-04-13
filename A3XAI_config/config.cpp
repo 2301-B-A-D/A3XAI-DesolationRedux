@@ -74,19 +74,19 @@ class CfgA3XAISettings {
 	//1: Generate AI uniform types from Exile trader tables (Default)
 	//0: Uniforms defined by uniformTypes0, uniformTypes1, uniformTypes2, uniformTypes3
 	//dynamicUniformBlacklist: List of uniform classnames to ignore from Exile trader tables.
-	generateDynamicUniforms = 1;
+	generateDynamicUniforms = 0;
 	dynamicUniformBlacklist[] = {};
 	
 	//1: Generate AI backpack types from Exile trader tables (Default)
 	//0: Backpacks defined by backpackTypes0, backpackTypes1, backpackTypes2, backpackTypes3
 	//dynamicBackpackBlacklist: List of backpack classnames to ignore from Exile trader tables.
-	generateDynamicBackpacks = 1;
+	generateDynamicBackpacks = 0;
 	dynamicBackpackBlacklist[] = {};
 	
 	//1: Generate AI backpack types from Exile trader tables (Default)
 	//0: Vests defined by vestTypes0, vestTypes1, vestTypes2, vestTypes3
 	//dynamicVestBlacklist: List of vest classnames to ignore from Exile trader tables.
-	generateDynamicVests = 1;
+	generateDynamicVests = 0;
 	dynamicVestBlacklist[] = {};
 	
 	//1: Generate AI headgear types from Exile trader tables (Default)
@@ -115,7 +115,7 @@ class CfgA3XAISettings {
 
 
 	//Enable or disable radio message receiving. Players with radios or part of a group with at least one radio will be able to intercept some AI communications. (Default: 0)
-	enableRadioMessages = 0;
+	enableRadioMessages = 1;
 
 
 	/*	Shared AI Unit Settings. These settings affect all AI spawned unless noted otherwise.
@@ -176,7 +176,7 @@ class CfgA3XAISettings {
 	enableTempNVGs = 0;
 	
 	//Minimum AI unit level requirement to use underslung grenade launchers. Set to -1 to disable completely. (Default: 1)
-	levelRequiredGL = 1;
+	levelRequiredGL = -1;
 	
 	//Minimum AI unit level requirement to use launcher weapons. Set to -1 to disable completely. Launchers are unlootable and will be removed at death. (Default: -1)
 	levelRequiredLauncher = -1;
@@ -185,7 +185,7 @@ class CfgA3XAISettings {
 	launcherTypes[] = {"launch_NLAW_F","launch_RPG32_F","launch_B_Titan_F","launch_I_Titan_F","launch_O_Titan_F","launch_B_Titan_short_F","launch_I_Titan_short_F","launch_O_Titan_short_F"}; 
 	
 	//Maximum number of launcher weapons allowed per group (Default: 1)
-	launchersPerGroup = 1;
+	launchersPerGroup = 0;
 	
 	//Enable or disable AI self-healing. Level 0 AI cannot self-heal. Affects: All AI infantry units (Default: 1).
 	enableHealing = 1;
@@ -198,7 +198,7 @@ class CfgA3XAISettings {
 	noCollisionDamage = 1;
 	
 	//If enabled, AI killed by vehicle collisions will have their gear removed (Default: 1)
-	roadKillPenalty = 1;
+	roadKillPenalty = 0;
 	
 	//Array of positions defining trader locations. AI will be non-hostile and damage immune around this area.
 	//Use this if your server is not using the standard Exile trader markers or sensors in mission.sqm
@@ -248,7 +248,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/		
 
 	//Upper limit of dynamic spawns on map at once. Set to 0 to disable dynamic spawns (Default: 15)
-	maxDynamicSpawns = 15;
+	maxDynamicSpawns = 7;
 	
 	//Minimum time (in seconds) that must pass between dynamic spawns for each player (Default: 900)
 	timePerDynamicSpawn = 900;
@@ -287,7 +287,7 @@ class CfgA3XAISettings {
 	vehicleDespawnTime = 600;
 	
 	//Enable player use of AI vehicles. Players must either disable the vehicle or kill all units of the group in order to access the vehicle. (Default: 0)
-	vehiclesAllowedForPlayers = 0;
+	vehiclesAllowedForPlayers = 1;
 	
 	//Add name of location as displayed on map prevent AI vehicle patrols from travelling to these locations. Location names are case-sensitive. Note: Vehicles may still pass through these areas
 	//Example: waypointBlacklistAir[] = {"Aggelochori","Panochori","Zaros"};
@@ -304,7 +304,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/		
 
 	//Global maximum number of active AI air vehicle patrols. Set at 0 to disable (Default: 0).							
-	maxAirPatrols = 0;	
+	maxAirPatrols = 2;	
 	
 	//Probability of spawning Level 0/1/2/3 AI air vehicle patrol spawns. Probabilities should add up to 1.00		
 	levelChancesAir[] = {0.00,0.50,0.35,0.15};
@@ -314,19 +314,22 @@ class CfgA3XAISettings {
 	respawnAirMaxTime = 900;
 	
 	//Classnames of air vehicle types to use, with the maximum amount of each type to spawn.
+	//airVehicleList[] = {
+		//{"B_Heli_Light_01_armed_F",5},
+		//{"B_Heli_Transport_01_F",5},
+		//{"B_Heli_Transport_03_F",2}
+	//};
 	airVehicleList[] = {
-		{"B_Heli_Light_01_armed_F",5},
-		{"B_Heli_Transport_01_F",5},
-		{"B_Heli_Transport_03_F",2}
+		{"B_Heli_Light_01_F",2}
 	};
 	
 	//Maximum number of gunner units per air vehicle. Limited by actual number of available gunner positions. (Default: 2)
 	//Affects: All AI air vehicle patrols, including custom and reinforcement.
-	airGunnerUnits = 2;
+	airGunnerUnits = 1;
 	
 	//Probability of AI helicopter sucessfully detecting player if there is line-of-sight. AI helicopters will conduct a visual sweep upon arriving at each waypoint and some distance after leaving. (Default: 0.80)
 	//Affects: All AI air vehicle patrols, including custom and reinforcement.
-	airDetectChance = 0.80;
+	airDetectChance = 0.40;
 	
 	//Probability of AI to deploy infantry units by parachute if players are nearby when helicopter is investigating a waypoint. (Default: 1.00)
 	//Affects: Air vehicle patrols.
@@ -349,7 +352,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/	
 
 	//Global maximum number of active AI land vehicle patrols. Set at 0 to disable (Default: 0).	
-	maxLandPatrols = 0;
+	maxLandPatrols = 10;
 	
 	//Probability of spawning Level 0/1/2/3 AI land vehicle spawns. Probabilities should add up to 1.00		
 	levelChancesLand[] = {0.00,0.50,0.35,0.15};
@@ -360,25 +363,53 @@ class CfgA3XAISettings {
 	
 	//Classnames of land vehicle types to use, with the maximum amount of each type to spawn.
 	landVehicleList[] = {
-		{"Exile_Car_Hatchback_Rusty1",5},
-		{"Exile_Car_Hatchback_Rusty2",5},
-		{"Exile_Car_Hatchback_Rusty3",5},
-		{"Exile_Car_Hatchback_Sport_Red",5},
-		{"Exile_Car_SUV_Red",5},
-		{"Exile_Car_Offroad_Rusty1",5},
-		{"Exile_Car_Offroad_Rusty2",5},
-		{"Exile_Car_Offroad_Rusty3",5},
-		{"Exile_Car_Offroad_Repair_Civillian",5},
-		{"Exile_Car_Offroad_Armed_Guerilla01",5},
-		{"Exile_Car_Strider",5},
-		{"Exile_Car_Hunter",5},
-		{"Exile_Car_Ifrit",5},
-		{"Exile_Car_Van_Black",5},
-		{"Exile_Car_Van_Box_Black",5},
-		{"Exile_Car_Van_Fuel_Black",5},
-		{"Exile_Car_Zamak",5},
-		{"Exile_Car_Tempest",5},
-		{"Exile_Car_HEMMT",5}
+		{"C_Hatchback_01_F",5},
+		{"C_Hatchback_01_sport_F",5},
+		{"C_Hatchback_01_grey_F",5},
+		{"C_Hatchback_01_green_F",5},
+		{"C_Hatchback_01_blue_F",5},
+		{"C_Hatchback_01_bluecustom_F",5},
+		{"C_Hatchback_01_beigecustom_F",5},
+		{"C_Offroad_01_F",5},
+		{"C_Offroad_01_repair_F",5},
+		{"B_G_Offroad_01_repair_F",5},
+		{"O_G_Offroad_01_repair_F",5},
+		{"I_G_Offroad_01_repair_F",5},
+		{"I_G_Offroad_01_F",5},
+		{"C_Hatchback_01_sport_white_F",5},
+		{"C_Hatchback_01_sport_grey_F",5},
+		{"C_Hatchback_01_sport_green_F",5},
+		{"C_SUV_01_F",5},
+		{"SUV_01_base_red_F",5},
+		{"SUV_01_base_black_F",5},
+		{"SUV_01_base_grey_F",5},
+		{"SUV_01_base_orange_F",5},
+		{"C_Van_01_transport_F",5},
+		{"I_G_Van_01_transport_F",5},
+		{"C_Van_01_box_F",5},
+		{"C_Van_01_fuel_F",5},
+		{"I_G_Van_01_fuel_F",5},
+		{"B_G_Van_01_transport_F",5},
+		{"O_G_Van_01_transport_F",5},
+		{"B_G_Van_01_fuel_F",5},
+		{"O_G_Van_01_fuel_F",5},
+		{"C_Van_01_transport_white_F",5},
+		{"C_Van_01_transport_red_F",5},
+		{"C_Van_01_box_white_F",5},
+		{"C_Van_01_box_red_F",5},
+		{"C_Van_01_fuel_white_F",5},
+		{"C_Van_01_fuel_red_F",5},
+		{"C_Van_01_fuel_white_v2_F",5},
+		{"C_Van_01_fuel_red_v2_F",5},
+		{"I_C_Van_01_transport_F",5},
+		{"I_C_Van_01_transport_brown_F",5},
+		{"I_C_Van_01_transport_olive_F",5},
+		{"C_Offroad_01_F",5},
+		{"C_Offroad_01_repair_F",5},
+		{"B_G_Offroad_01_repair_F",5},
+		{"O_G_Offroad_01_repair_F",5},
+		{"I_G_Offroad_01_repair_F",5},
+		{"I_G_Offroad_01_F",5}
 	};
 	
 	//Maximum number of gunner units per land vehicle. Limited by actual number of available gunner positions. (Default: 2)
@@ -464,7 +495,7 @@ class CfgA3XAISettings {
 	UAVCallReinforceCooldown = 1800;
 	
 	//Probability to successfully detect player if there is line-of-sight. If at least one player is detected, air reinforcements will be summoned to the area. (Default: 0.50)
-	UAVDetectChance = 0.80;
+	UAVDetectChance = 0.50;
 	
 	
 	/*	UGV Patrol Settings
@@ -517,53 +548,53 @@ class CfgA3XAISettings {
 	//AI skill settings level 0 (Skill, Minimum skill, Maximum skill). Defaults: Accuracy 0.05-0.10, Others 0.30-0.50
 	skill0[] = {
 		{"aimingAccuracy",0.05,0.10},
-		{"aimingShake",0.30,0.50},
-		{"aimingSpeed",0.30,0.50},
-		{"spotDistance",0.30,0.50},
-		{"spotTime",0.30,0.50},
-		{"courage",0.30,0.50},
-		{"reloadSpeed",0.30,0.50},
-		{"commanding",0.30,0.50},
-		{"general",0.30,0.50}
+		{"aimingShake",0.20,0.29},
+		{"aimingSpeed",0.20,0.29},
+		{"spotDistance",0.20,0.29},
+		{"spotTime",0.20,0.29},
+		{"courage",0.20,0.29},
+		{"reloadSpeed",0.20,0.29},
+		{"commanding",0.20,0.29},
+		{"general",0.20,0.29}
 	};
 	
 	//AI skill settings level 1 (Skill, Minimum skill, Maximum skill). Defaults: Accuracy 0.10-0.15, Others 0.40-0.60
 	skill1[] = {
 		{"aimingAccuracy",0.10,0.15},
-		{"aimingShake",0.40,0.60},
-		{"aimingSpeed",0.40,0.60},
-		{"spotDistance",0.40,0.60},
-		{"spotTime",0.40,0.60},
-		{"courage",0.40,0.60},
-		{"reloadSpeed",0.40,0.60},
-		{"commanding",0.40,0.60},
-		{"general",0.40,0.60}	
+		{"aimingShake",0.25,0.30},
+		{"aimingSpeed",0.25,0.30},
+		{"spotDistance",0.25,0.30},
+		{"spotTime",0.25,0.30},
+		{"courage",0.25,0.30},
+		{"reloadSpeed",0.25,0.30},
+		{"commanding",0.25,0.30},
+		{"general",0.25,0.30}	
 	};
 	
 	//AI skill settings level 2 (Skill, Minimum skill, Maximum skill). Defaults: Accuracy 0.15-0.20, Others 0.50-0.70
 	skill2[] = {
 		{"aimingAccuracy",0.15,0.20},
-		{"aimingShake",0.50,0.70},
-		{"aimingSpeed",0.50,0.70},
-		{"spotDistance",0.50,0.70},
-		{"spotTime",0.50,0.70},
-		{"courage",0.50,0.70},
-		{"reloadSpeed",0.50,0.70},
-		{"commanding",0.50,0.70},
-		{"general",0.50,0.70}
+		{"aimingShake",0.30,0.35},
+		{"aimingSpeed",0.30,0.35},
+		{"spotDistance",0.30,0.35},
+		{"spotTime",0.30,0.35},
+		{"courage",0.30,0.35},
+		{"reloadSpeed",0.30,0.35},
+		{"commanding",0.30,0.35},
+		{"general",0.30,0.35}
 	};
 	
 	//AI skill settings level 3 (Skill, Minimum skill, Maximum skill). Defaults: Accuracy 0.20-0.25, Others 0.60-0.80
 	skill3[] = {
-		{"aimingAccuracy",0.20,0.25},
-		{"aimingShake",0.60,0.80},
-		{"aimingSpeed",0.60,0.80},
-		{"spotDistance",0.60,0.80},
-		{"spotTime",0.60,0.80},
-		{"courage",0.60,0.80},
-		{"reloadSpeed",0.60,0.80},
-		{"commanding",0.60,0.80},
-		{"general",0.60,0.80}
+		{"aimingAccuracy",0.15,0.20},
+		{"aimingShake",0.35,0.40},
+		{"aimingSpeed",0.35,0.40},
+		{"spotDistance",0.35,0.40},
+		{"spotTime",0.35,0.40},
+		{"courage",0.35,0.40},
+		{"reloadSpeed",0.35,0.40},
+		{"commanding",0.35,0.40},
+		{"general",0.35,0.40}
 	};
 	
 	
@@ -623,10 +654,10 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/
 
 	//Maximum number of food loot items from foodLoot per infantry unit of each AI group. (Default: 2)								
-	foodLootCount = 2;
+	foodLootCount = 5;
 	
 	//Maximum number of items to select from miscLoot table per infantry unit of each AI group. (Default: 2)											
-	miscLootCount = 2;
+	miscLootCount = 10;
 	
 	//Maximum number of items to select from medicalLoot table per infantry unit of each AI group. (Default: 1)											
 	medicalLootCount = 1;
@@ -667,7 +698,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/
 
 	//Enable Exile-style handling (ie: Respect rewards, kill-count tracking) for AI kills (Default: 1)
-	enableRespectRewards = 1;
+	enableRespectRewards = 0;
 	
 	//Respect bonus for kills with Axe
 	respectHumiliation = 300;
@@ -715,7 +746,7 @@ class CfgA3XAISettings {
 	sniperList[] = {"arifle_MXM_Black_F","arifle_MXM_F","srifle_DMR_01_F","srifle_DMR_02_camo_F","srifle_DMR_02_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_tan_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_GM6_F","srifle_LRR_camo_F","srifle_LRR_F"};
 	
 	//AI weapon scope attachment settings. Note: weaponOpticsList will not be read if generateDynamicOptics is enabled.
-	weaponOpticsList[] = {"optic_NVS","optic_SOS","optic_LRPS","optic_AMS","optic_AMS_khk","optic_AMS_snd","optic_KHS_blk","optic_KHS_hex","optic_KHS_old","optic_KHS_tan","optic_DMS","optic_Arco","optic_Hamr","Elcan_Exile","Elcan_reflex_Exile","optic_MRCO","optic_Holosight","optic_Holosight_smg","optic_Aco","optic_ACO_grn","optic_Aco_smg","optic_ACO_grn_smg","optic_Yorris","optic_MRD"};
+	weaponOpticsList[] = {"optic_NVS","optic_SOS","optic_LRPS","optic_AMS","optic_AMS_khk","optic_AMS_snd","optic_KHS_blk","optic_KHS_hex","optic_KHS_old","optic_KHS_tan","optic_DMS","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","optic_Holosight_smg","optic_Aco","optic_ACO_grn","optic_Aco_smg","optic_ACO_grn_smg","optic_Yorris","optic_MRD"};
 	
 	//AI backpack types (for AI levels 0-3). Note: backpackTypes0-3 will not be read if generateDynamicBackpacks is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -774,39 +805,39 @@ class CfgA3XAISettings {
 	compassTypes3[] = {"ItemCompass"};
 	
 	//AI watch-slot items. (Currently unused)
-	watchTypes0[] = {"Exile_Item_XM8"};
-	watchTypes1[] = {"Exile_Item_XM8"};
-	watchTypes2[] = {"Exile_Item_XM8"};
-	watchTypes3[] = {"Exile_Item_XM8"};
+	watchTypes0[] = {"ItemWatch"};
+	watchTypes1[] = {"ItemWatch"};
+	watchTypes2[] = {"ItemWatch"};
+	watchTypes3[] = {"ItemWatch"};
 	
 	
 	//AI Food/Loot item types. 
 	// Note: foodLoot will not be read if generateDynamicFood is enabled.
 	// Note: miscLoot will not be read if generateDynamicLoot is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	foodLoot[] = {"Exile_Item_GloriousKnakworst","Exile_Item_SausageGravy","Exile_Item_ChristmasTinner","Exile_Item_BBQSandwich","Exile_Item_Surstromming","Exile_Item_Catfood","Exile_Item_PlasticBottleFreshWater","Exile_Item_Beer","Exile_Item_Energydrink"};
-	miscLoot[] = {"Exile_Item_Rope","Exile_Item_DuctTape","Exile_Item_ExtensionCord","Exile_Item_FuelCanisterEmpty","Exile_Item_JunkMetal","Exile_Item_LightBulb","Exile_Item_MetalBoard","Exile_Item_MetalPole","Exile_Item_CamoTentKit"};
+	foodLoot[] = {"DSR_Item_Bacon","DSR_Item_Beans","DSR_Item_Cereal","DSR_Item_Deviled_Ham","DSR_Item_Rice","DSR_Item_tuna","DSR_Item_MRE","DSR_Item_Can_Chicken","DSR_Item_Can_Clams","DSR_Item_Powdered_Milk","DSR_Item_Instant_Coffee","DSR_Item_Ration","DSR_Item_Bacon","DSR_Item_Beans","DSR_Item_Cereal","DSR_Item_Deviled_Ham","DSR_Item_Rice","DSR_Item_tuna","DSR_Item_MRE","DSR_Item_Can_Chicken","DSR_Item_Can_Clams","DSR_Item_Powdered_Milk","DSR_Item_Instant_Coffee","DSR_Item_Ration","DSR_Item_Bacon","DSR_Item_Beans","DSR_Item_Cereal","DSR_Item_Deviled_Ham","DSR_Item_Rice","DSR_Item_tuna"};
+	miscLoot[] = {"20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","6Rnd_12g_Buck","6Rnd_12g_Buck","DSR_Item_MRE","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","7Rnd_308win_mag","7Rnd_308win_mag","7Rnd_308win_mag","DSR_Item_Bloodbag_Full","DSR_Item_Bandage","DSR_Item_MRE","7Rnd_408_Mag","7Rnd_408_Mag","7Rnd_408_Mag","ItemMap","DSR_Item_Bloodbag_Full","DSR_Item_Bandage","DSR_Item_MRE","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","DSR_Item_MRE","DSR_Item_Bloodbag_Full","DSR_Item_Bloodbag_Full","DSR_Item_Morphine","DSR_Item_Morphine","DSR_Item_Morphine","DSR_Item_Bandage","DSR_Item_Bandage","DSR_Item_Bandage","DSR_Item_Painkillers","DSR_Item_Painkillers","DSR_Item_Painkillers","DSR_Item_Antibiotic","DSR_Item_Bloodbag_Full","DSR_Item_Bloodbag_Full","DSR_Item_Bloodbag_Full","DSR_Item_Bandage","DSR_Item_Bandage","DSR_Item_Bandage","DSR_Item_Disinfectant","DSR_Item_Painkillers","DSR_Item_Painkillers","FirstAidKit","7Rnd_308win_mag","7Rnd_308win_mag","10Rnd_762x54_Mag","6Rnd_12g_Buck","6Rnd_44_Mag","6Rnd_44_Mag","30Rnd_545x39_Mag_F","30Rnd_545x39_Mag_F","30Rnd_545x39_Mag_F","30Rnd_762x39_Mag_F","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","32Rnd_9x19mm_Mag","30Rnd_9x21_Mag","30Rnd_9x21_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","DSR_Melee_Axe","DSR_Melee_Axe","DSR_Melee_Pickaxe","DSR_Item_Bricks","DSR_Item_Bricks","DSR_Item_Toolbox","DSR_Item_Saw","DSR_Item_Hardware","DSR_Item_Hardware","DSR_Item_Hardware","DSR_Item_Hardware","DSR_Item_Scrap_Metal","DSR_Item_Scrap_Metal","DSR_Item_Padlock","DSR_Item_Tarp","DSR_Item_Tarp","DSR_Item_Duct_Tape","DSR_Item_Fabric_Scraps","DSR_Item_Fabric_Scraps","DSR_Item_Electrical_Comp","DSR_Item_Engine_Block","DSR_Item_Tire_RepairKit","DSR_Item_Tire_RepairKit","DSR_Item_Gascan_Small_Full","DSR_Item_Wrench","DSR_Item_Glass_Part","DSR_Item_Glass_Part","DSR_Item_Beans","DSR_Item_Cereal","DSR_Item_Powdered_Milk","DSR_Item_Rice","DSR_Item_Bacon","DSR_Item_Waterbottle_Full","DSR_Item_Canteen_Full","DSR_Item_Spirit","DSR_Item_Franta","DSR_Item_Can_Opener","DSR_Item_Water_Purification_Tablets","DSR_Item_Vitamins","20Rnd_762x51_Mag","20Rnd_762x51_Mag","20Rnd_762x51_Mag","6Rnd_12g_Buck","6Rnd_12g_Buck","DSR_Item_MRE"};
 	
 	
 	//AI Medical item types. 
 	// Note: medicalLoot will not be read if generateMedicalFood is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	medicalLoot[] = {"Exile_Item_InstaDoc","Exile_Item_Bandage","Exile_Item_Vishpirin"};
+	medicalLoot[] = {"DSR_Item_Bandage","DSR_Item_Painkillers","DSR_Item_Antibiotic","DSR_Item_Bloodbag_Full","DSR_Item_Disinfectant"};
 	
 	
 	//AI toolbelt item types. Toolbelt items are added to AI inventory upon death. Format: [item classname, item probability]
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 	toolsList0[] = {
-		{"Exile_Item_XM8",0.90},{"ItemCompass",0.30},{"ItemMap",0.30},{"ItemGPS",0.00},{"ItemRadio",0.00}
+		{"ItemWatch",0.90},{"ItemCompass",0.30},{"ItemMap",0.30},{"ItemGPS",0.00},{"ItemRadio",0.00}
 	};
 	toolsList1[] = {
-		{"Exile_Item_XM8",0.90},{"ItemCompass",0.50},{"ItemMap",0.50},{"ItemGPS",0.10},{"ItemRadio",0.10}
+		{"ItemWatch",0.90},{"ItemCompass",0.50},{"ItemMap",0.50},{"ItemGPS",0.10},{"ItemRadio",0.10}
 	};
 	toolsList2[] = {
-		{"Exile_Item_XM8",0.90},{"ItemCompass",0.70},{"ItemMap",0.70},{"ItemGPS",0.20},{"ItemRadio",0.20}
+		{"ItemWatch",0.90},{"ItemCompass",0.70},{"ItemMap",0.70},{"ItemGPS",0.20},{"ItemRadio",0.20}
 	};
 	toolsList3[] = {
-		{"Exile_Item_XM8",0.90},{"ItemCompass",0.90},{"ItemMap",0.90},{"ItemGPS",0.30},{"ItemRadio",0.30}
+		{"ItemWatch",0.90},{"ItemCompass",0.90},{"ItemMap",0.90},{"ItemGPS",0.30},{"ItemRadio",0.30}
 	};
 	
 	
