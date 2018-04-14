@@ -3,7 +3,7 @@ A3XAI - Adapted files for **[Desolation Redux]** mod (*NOT Exile Mod*)
 
 Important
 ---
-This is a modified version of @SnarkIndustries (Face)'s A3XAI. This AI has been updated to work with **[Desolation Redux]** mod. There is absolutely no guarantee that this version of A3XAI is bug or issue-free.
+This is a modified version of @SnarkIndustries (Face)'s A3XAI-FINAL 3.0 version. This AI has been updated to work with **[Desolation Redux]** mod. There is absolutely no guarantee that this version of A3XAI is bug or issue-free.
 
 Introduction
 ---
@@ -16,10 +16,10 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 ---
 1. UnPBO the **[Desolation Redux]** mission files
 2. Edit mission.sqm
-...- 1. Find: CIVILIAN
-......- Replace: INDEPENDENT
-...- 2. Find: C_man_p_beggar_F
-......- Replace: I_G_Survivor_F
+⋅⋅⋅- 1. Find: CIVILIAN
+⋅⋅⋅⋅⋅⋅- Replace: INDEPENDENT
+⋅⋅⋅- 2. Find: C_man_p_beggar_F
+⋅⋅⋅⋅⋅⋅- Replace: I_G_Survivor_F
 3. Re-PBO your mission
 
 Installing A3XAI under Server "addons" folder
@@ -48,7 +48,7 @@ To configure A3XAI:
 1. Unpack A3XAI_config.pbo (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
 2. Edit config.cpp with a text editor (Recommended to use Notepad++: https://notepad-plus-plus.org/). Make your configuration changes.
 3. Repack A3XAI_config.pbo
-...- Note: The current configuration checked in here can be viewed on the Moosemilker Desolation Redux server (Details at: http://moosemilker.com)
+⋅⋅⋅- Note: The current configuration checked in here can be viewed on the Moosemilker Desolation Redux server (Details at: http://moosemilker.com)
 
 A3XAI Features
 ---
@@ -56,6 +56,7 @@ A3XAI Features
 * Dynamic AI spawns: A3XAI will create ambient threat in the area for each player by periodically spawning AI to create unexpected ambush encounters. These AI may occasionally seek out and hunt a player.
 * Random AI spawns: A3XAI will create spawns that are randomly placed around the map and are periodically relocated. These spawns are preferentially created in named locations, but may be also created anywhere in the world.
 * Air and land vehicle AI patrols: AI patrol in vehicles around the map, looking for players to hunt down. Cars and trucks may roam the road, and helicopters (or jets) search the skies for players. Helicopters with available cargo space may also occasionally deploy an AI group by parachute.
+* Loot drops from AI via a sleeping bag container (Look for sleeping bag drops from AI) - This was done to work around [Desolation Redux] garbage collection system without modifying the mod's server files.
 * UAV and UGV patrols: Currently an experimental feature in testing. UAVs and UGVs patrol around the map, and if armed, will engage detected players. UAVs and UGVs may also call for AI reinforcements.
 * Custom AI spawns: Users may also define custom infantry and vehicle AI spawns at specified locations.
 * ~~Exile-style Respect rewards: Players gain Respect rewards for killing AI, along with bonus points for "special" kills such as long-distance kills or kill-streaks.~~
