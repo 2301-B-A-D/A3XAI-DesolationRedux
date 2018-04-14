@@ -16,10 +16,10 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 ---
 1. UnPBO the **[Desolation Redux]** mission files
 2. Edit mission.sqm
-⋅⋅⋅- 1. Find: CIVILIAN
-⋅⋅⋅⋅⋅⋅- Replace: INDEPENDENT
-⋅⋅⋅- 2. Find: C_man_p_beggar_F
-⋅⋅⋅⋅⋅⋅- Replace: I_G_Survivor_F
+	- 1. Find: CIVILIAN
+		- Replace: INDEPENDENT
+	- 2. Find: C_man_p_beggar_F
+		- Replace: I_G_Survivor_F
 3. Re-PBO your mission
 
 Installing A3XAI under Server "addons" folder
@@ -48,7 +48,7 @@ To configure A3XAI:
 1. Unpack A3XAI_config.pbo (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
 2. Edit config.cpp with a text editor (Recommended to use Notepad++: https://notepad-plus-plus.org/). Make your configuration changes.
 3. Repack A3XAI_config.pbo
-⋅⋅⋅- Note: The current configuration checked in here can be viewed on the Moosemilker Desolation Redux server (Details at: http://moosemilker.com)
+	- Note: The current configuration checked in here can be viewed on the Moosemilker Desolation Redux server (Details at: http://moosemilker.com)
 
 A3XAI Features
 ---
