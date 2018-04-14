@@ -3,7 +3,7 @@ A3XAI - Adapted files for **[Desolation Redux]** mod (*NOT Exile Mod*)
 
 Important
 ---
-This is a modified version of @SnarkIndustries (Face)'s A3XAI-FINAL 3.0 version. This AI has been updated to work with **[Desolation Redux]** mod. There is absolutely no guarantee that this version of A3XAI is bug or issue-free.
+This is a modified version of @SnarkIndustries (Face)'s A3XAI-DesolationRedux 3.0 version. This AI has been updated to work with **[Desolation Redux]** mod. There is absolutely no guarantee that this version of A3XAI is bug or issue-free.
 
 Introduction
 ---
@@ -24,7 +24,7 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 
 Installing A3XAI under Server "addons" folder
 ---
-1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/SirFrostingham/A3XAI-Final
+1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/SirFrostingham/A3XAI-DesolationRedux
 2. Locate the .zip file you downloaded and extract it to a folder.
 3. Open the extracted folder and open the Installation Package folder. 
 4. Copy the 2 PBO files (A3XAI.pbo & A3XAI_config.pbo) from this folder
@@ -34,7 +34,7 @@ Installing A3XAI under Server "addons" folder
 
 Installing A3XAI as "-serverMod" method
 ---
-1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/SirFrostingham/A3XAI-Final
+1. Download the latest A3XAI release from the A3XAI Releases page: https://github.com/SirFrostingham/A3XAI-DesolationRedux
 2. Locate the .zip file you downloaded and extract it to a folder.
 3. Open the extracted folder and open the Installation Package folder. 
 4. Copy the 2 PBO files (A3XAI.pbo & A3XAI_config.pbo) from this folder
