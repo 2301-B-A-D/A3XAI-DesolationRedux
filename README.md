@@ -56,7 +56,7 @@ A3XAI Features
 * Dynamic AI spawns: A3XAI will create ambient threat in the area for each player by periodically spawning AI to create unexpected ambush encounters. These AI may occasionally seek out and hunt a player.
 * Random AI spawns: A3XAI will create spawns that are randomly placed around the map and are periodically relocated. These spawns are preferentially created in named locations, but may be also created anywhere in the world.
 * Air and land vehicle AI patrols: AI patrol in vehicles around the map, looking for players to hunt down. Cars and trucks may roam the road, and helicopters (or jets) search the skies for players. Helicopters with available cargo space may also occasionally deploy an AI group by parachute.
-* Loot drops from AI via a sleeping bag container (Look for sleeping bag drops from AI) - This was done to work around [Desolation Redux] garbage collection system without modifying the mod's server files.
+* **Loot drops from AI via a sleeping bag container** (*Look for sleeping bag drops from AI*) - This was done to work around [Desolation Redux] garbage collection system without modifying the mod's server files.
 * UAV and UGV patrols: Currently an experimental feature in testing. UAVs and UGVs patrol around the map, and if armed, will engage detected players. UAVs and UGVs may also call for AI reinforcements.
 * Custom AI spawns: Users may also define custom infantry and vehicle AI spawns at specified locations.
 * ~~Exile-style Respect rewards: Players gain Respect rewards for killing AI, along with bonus points for "special" kills such as long-distance kills or kill-streaks.~~
