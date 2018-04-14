@@ -21,7 +21,7 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 	- 2. Find: C_man_p_beggar_F
 		- Replace: I_G_Survivor_F
 3. Re-PBO your mission
-4. Update/back-fill your database by hand or by script. This is necessary, for current living players to be shot at by AI.
+4. Use the following MySQL script to update/back-fill your database. This is necessary, for current living players to be shot at by AI.
 
 ```
 	UPDATE `desolationredux`.`charactershareables` 
