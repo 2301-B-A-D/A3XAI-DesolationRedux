@@ -15,12 +15,12 @@ Prerequisite tools:
 Prerequisite: Editing Desolation Redux mission file (if you do not do these steps, AI will not shoot at players):
 ---
 1. UnPBO the **[Desolation Redux]** mission files
-2. Edit mission.sqm
+2. Edit mission.sqm with a text editor (Recommended to use Notepad++: https://notepad-plus-plus.org/).
 	- 1. Find: CIVILIAN
 		- Replace: INDEPENDENT
 	- 2. Find: C_man_p_beggar_F
 		- Replace: I_G_Survivor_F
-3. Re-PBO your mission
+3. Re pack the mission PBO (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
 4. Use the following MySQL script to update/back-fill your database. This is necessary, for current living players to be shot at by AI.
 
 ```
