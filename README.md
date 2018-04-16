@@ -23,8 +23,10 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 3. OPTIONAL: May help with uniforms not being compatible with player... For now, testing has shown this to work.
 	- ADD: file in root of mission: init.sqf
 		- ADD these lines:
+```
 			INDEPENDENT setFriend [CITIZEN, 1];
 			CITIZEN setFriend [INDEPENDENT, 1];
+```
 4. Re pack the mission PBO (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
 5. Use the following MySQL script to update/back-fill your database. This is necessary, for current living players to be shot at by AI.
 
