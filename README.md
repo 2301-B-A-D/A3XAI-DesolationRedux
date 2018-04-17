@@ -20,21 +20,19 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 		- Replace: INDEPENDENT
 	- 2. Find: C_man_p_beggar_F
 		- Replace: I_G_Survivor_F
-3. OPTIONAL: May help with uniforms not being compatible with player... For now, testing has shown this to work.
-	- ADD: file in root of mission: init.sqf
-		- ADD these lines:
-```
-	INDEPENDENT setFriend [CIVILIAN, 1];
-	CIVILIAN setFriend [INDEPENDENT, 1];
-```
-4. Re pack the mission PBO (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
-5. Use the following MySQL script to update/back-fill your database. This is necessary, for current living players to be shot at by AI.
+3. Re pack the mission PBO (Recommended to use PBO Manager: http://www.armaholic.com/page.php?id=16369)
+4. Use the following MySQL script to update/back-fill your database. This is necessary, for current living players to be shot at by AI.
 
 ```
 	UPDATE `desolationredux`.`charactershareables` 
 	SET `classname` = 'I_G_Survivor_F' 
 	WHERE `classname` = 'C_man_p_beggar_F';​`
 ```
+
+* Known Issues:
+	- Some uniforms spawned by the Desolation Redux loot manager may not be wearable by players
+		- This has to do with BIS Arma's code.
+		- There is a research task ongoing for a workaround, aside from forcing a new mod both client and server side: "Unlocked Uniforms" mod (by Haleks).
 
 Installing A3XAI under Server "addons" folder
 ---
