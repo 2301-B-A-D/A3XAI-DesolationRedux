@@ -53,7 +53,7 @@ Installing A3XAI as "-serverMod" method
 5. Create @A3XAI folder under your server's Arma 3 folder.
 6. Create addons folder inside of @A3XAI (should end up looking like this: @A3XAI\addons)
 7. Paste the contents copied from Step 4 into this folder (something like: C:\Program Files (x86)\Steam\SteamApps\common\Arma 3 Server\@A3XAI\addons).
-8. Modify your server's startup parameters to include @A3XAI. For example: -serverMod=@ExileServer;@A3XAI;
+8. Modify your server's startup parameters to include @A3XAI. For example: -serverMod=@DesolationServer;@A3XAI;
 
 To configure A3XAI:
 ---
