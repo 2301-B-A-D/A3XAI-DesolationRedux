@@ -257,7 +257,7 @@ class CfgA3XAISettings {
 	purgeLastDynamicSpawnTime = 3600;
 	
 	//Probability for dynamic AI to actively hunt a targeted player. If probability check fails, dynamic AI will patrol the area instead of hunting (Default: 0.66)
-	spawnHunterChance = 0.66;
+	spawnHunterChance = 0.10;
 	
 	//Time to wait (seconds) before despawning all AI units in dynamic spawn area when no players are present. (Default: 120)
 	despawnDynamicSpawnTime = 60;
@@ -329,7 +329,7 @@ class CfgA3XAISettings {
 	
 	//Probability of AI helicopter sucessfully detecting player if there is line-of-sight. AI helicopters will conduct a visual sweep upon arriving at each waypoint and some distance after leaving. (Default: 0.80)
 	//Affects: All AI air vehicle patrols, including custom and reinforcement.
-	airDetectChance = 0.40;
+	airDetectChance = 0.30;
 	
 	//Probability of AI to deploy infantry units by parachute if players are nearby when helicopter is investigating a waypoint. (Default: 1.00)
 	//Affects: Air vehicle patrols.

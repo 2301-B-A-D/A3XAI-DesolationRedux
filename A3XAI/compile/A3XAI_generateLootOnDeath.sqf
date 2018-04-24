@@ -151,17 +151,17 @@ if(count(_array)>0) then {
 	} foreach ((_array) select 0);
 };
 // copy loadout (the rest of the AI's inventory)
-{
-	_item = _x select 0;
-	_cargo addItemCargoGlobal [_item,1];
-} forEach _loadoutArray;
+// _loadoutArray = getUnitLoadout _unit;
+// {
+	// _item = _x select 0;
+	// _cargo addItemCargoGlobal [_item,1];
+// } forEach _loadoutArray;
 _array = getUnitLoadout _unit;
 if(count(_array)>0) then {
 	{
 		_cargo addItemCargoGlobal [_x,1];
 	} foreach ((_array) select 0);
 };
-_loadoutArray = getUnitLoadout _unit;
 // copy the rest of it
 if((headgear _unit)!="") then {
 	_cargo addItemCargoGlobal [(headgear _unit),1];
