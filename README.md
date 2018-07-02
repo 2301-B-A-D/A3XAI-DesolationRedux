@@ -26,7 +26,7 @@ Prerequisite: Editing Desolation Redux mission file (if you do not do these step
 ```
 	UPDATE `desolationredux`.`charactershareables` 
 	SET `classname` = 'I_G_Survivor_F' 
-	WHERE `classname` = 'C_man_p_beggar_F';​`
+	WHERE `classname` = 'C_man_p_beggar_F';
 ```
 
 * Known Issues:
