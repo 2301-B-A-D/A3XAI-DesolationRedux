@@ -19,36 +19,14 @@ _toolLoot = [];
 
 _loadout = _unit getVariable ["loadout",[[],[]]];
 _primaryWeapon = [_loadout select 0,0,""] call A3XAI_param;
-
-	// A-A-ron add start
-    _drop = createVehicle [
-        "Land_Sleeping_bag_brown_folded_F",
-        _this select 0,
-        [],
-        0, 
-        "NONE"
-    ];
-	
-	_cargo = "Supply500" createVehicle [0,0,0];
-	_cargo attachTo [_drop, [0,0,0.85]];
-	_drop attachTo [_unit, [0,0.25,0.5]];
-	detach _drop;
-	
-	_drop enableRopeAttach false;
-	_drop setVariable ["permaLoot",true];
-	_drop allowDamage false;
-	
-// A-A-ron end
-
+    
 //Generate a pistol if one wasn't assigned with loadout script.
 if ((getNumber (configFile >> "CfgWeapons" >> _primaryWeapon >> "type")) != 2) then {
 	_pistol = A3XAI_pistolList call A3XAI_selectRandom;
 	_magazine = getArray (configFile >> "CfgWeapons" >> _pistol >> "magazines") select 0;
 	_unit addMagazine _magazine;	
 	_unit addWeapon _pistol;
-	// A-A-ron add
-	_cargo addItemCargoGlobal [_magazine,1];
-	_cargo addItemCargoGlobal [_pistol,1];
+
 	if (A3XAI_debugLevel > 1) then {
 		_weaponLoot pushBack _pistol;
 		_weaponLoot pushBack _magazine
@@ -61,31 +39,14 @@ _toolsArray = missionNamespace getVariable ["A3XAI_toolsList"+str(_unitLevel),[]
 	_item = _x select 0;
 	if (((_x select 1) call A3XAI_chance) && {[_item,"weapon"] call A3XAI_checkClassname}) then {
 		_unit addWeapon _item;
-		// A-A-ron add
-		_cargo addItemCargoGlobal [_item,1];
+
 		if (A3XAI_debugLevel > 1) then {
 			_toolLoot pushBack _item;
 		};
 	}
 } forEach _toolsArray;
 
-// A-A-ron add
-// copy all weapons attachments
-	// _array = primaryWeaponItems _unit;
-	// if(count(_array)>0) then {
-		// {
-			// _item = _x select 0;
-			// _cargo addItemCargoGlobal [_item,1];
-		// } forEach _array;
-	// };
-	// _array = secondaryWeaponItems _unit;
-	// if(count(_array)>0) then {
-		// {
-			// _item = _x select 0;
-			// _cargo addItemCargoGlobal [_item,1];
-		// } forEach _array;
-	// };
-// copy all items from all of unit's storage positions and add them in
+_cargo = backpackContainer _unit;//new
 _array = getItemCargo uniformContainer _unit;
 if(count(_array)>0) then {
 	{
@@ -150,12 +111,7 @@ if(count(_array)>0) then {
 		};
 	} foreach ((_array) select 0);
 };
-// copy loadout (the rest of the AI's inventory)
-// _loadoutArray = getUnitLoadout _unit;
-// {
-	// _item = _x select 0;
-	// _cargo addItemCargoGlobal [_item,1];
-// } forEach _loadoutArray;
+
 _array = getUnitLoadout _unit;
 if(count(_array)>0) then {
 	{

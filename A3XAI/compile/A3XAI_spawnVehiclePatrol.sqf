@@ -56,6 +56,7 @@ _vehicle call A3XAI_protectObject;
 _vehicle call A3XAI_secureVehicle;
 _vehicle call A3XAI_clearVehicleCargo;
 
+
 call {
 	if (_vehicle isKindOf "Plane") exitWith {
 		_direction = (random 360);
@@ -64,6 +65,10 @@ call {
 		_vehicle setVelocity [(_velocity select 1)*sin _direction - (_velocity select 0)*cos _direction, (_velocity select 0)*sin _direction + (_velocity select 1)*cos _direction, _velocity select 2];
 	};
 	if (_vehicle isKindOf "Helicopter") exitWith {
+	
+	if (typeof _vehicle == "B_Heli_Transport_03_F") then {
+														 _vehicle setObjectTextureGlobal [0, "red_camo.paa"];
+	                                                      };
 		_vehicle setDir (random 360);
 	};
 	if (_vehicle isKindOf "LandVehicle") exitWith {
@@ -112,8 +117,8 @@ for "_i" from 0 to ((_cargoSpots min _maxCargoUnits) - 1) do {
 };
 if (A3XAI_debugLevel > 1) then {diag_log format ["A3XAI Debug: Spawned %1 cargo units for %2 vehicle %3.",(_cargoSpots min _maxCargoUnits),_unitGroup,_vehicleType]};
 
-_unitGroup setBehaviour "AWARE";
-_unitGroup setCombatMode "YELLOW";
+_unitGroup setBehaviour "COMBAT";
+_unitGroup setCombatMode "RED";
 _unitGroup allowFleeing 0;
 
 _unitGroup setVariable ["unitLevel",_unitLevel];
@@ -166,7 +171,7 @@ if (_isAirVehicle) then {
 	};
 } else {
 	//Set initial waypoint and begin patrol
-	[_unitGroup,0] setWaypointType "MOVE";
+	[_unitGroup,0] setWaypointType "SAD";//new "MOVE"
 	[_unitGroup,0] setWaypointTimeout [5,10,15];
 	[_unitGroup,0] setWaypointCompletionRadius 150;
 	[_unitGroup,0] setWaypointStatements ["true","if !(local this) exitWith {}; [(group this)] spawn A3XAI_vehStartPatrol;"];

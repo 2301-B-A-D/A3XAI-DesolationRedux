@@ -16,6 +16,15 @@ class CfgPatches {
 		//requiredAddons[] = {"exile_client"};
 	};
 };
+class Plugins
+{
+	class A3XAI
+	{
+		name = "A3XAI";
+		desc = "A3XAI  for DesolationREDUX";
+		tag = "A3XAI";
+	};
+};
 
 class CfgFunctions {
 	class A3XAI {

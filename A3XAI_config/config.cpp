@@ -15,7 +15,7 @@ class CfgA3XAISettings {
 	
 	//Enable or disable event logging to the server RPT file (named arma3server_[date]_[time].rpt). Debug level setting. 0: No debug output, 1: Basic Debug output, 2: Detailed Debug output. (Default: 0)
 	//Debug output may help finding additional information about A3XAI's background behavior. This output is helpful when asking for help regarding bugs or unexpected behaviors.
-	debugLevel = 0;
+	debugLevel = 1;
 	
 	//Frequency of server monitor update to RPT log in seconds. The monitor periodically reports number of max/current AI units and dynamically spawned triggers into RPT log. (Default: 300, 0 = Disable reporting)											
 	monitorReportRate = 300;
@@ -34,7 +34,7 @@ class CfgA3XAISettings {
 	loadCustomFile = 0;
 	
 	//Minimum server FPS to spawn/respawn AI (Default: 0)
-	minFPS = 0; //0
+	minFPS = 10; //0
 	
 	//0: A3XAI uses individual threads to manage each spawned AI group (more accurate ammo/fuel reloading). 1: A3XAI will use a single thread to manage all AI groups (better performance). (Default: 0)
 	groupManageMode = 0;
@@ -204,7 +204,7 @@ class CfgA3XAISettings {
 	//Use this if your server is not using the standard Exile trader markers or sensors in mission.sqm
 	//For performance reasons, do not add locations other than actual trader positions to this array. 
 	//Example: traderAreaLocations[] = {{2998.06,18175.5,0},{14600,16797.2,0},{23334.6,24188.9,0}};
-	traderAreaLocations[] = {};
+	traderAreaLocations[] = {{14261.6,3613.2},{6362.84,12128.1},{14341.1,15004.7}};
 	
 	
 	/*	Static Infantry AI Spawning Settings
@@ -304,7 +304,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/		
 
 	//Global maximum number of active AI air vehicle patrols. Set at 0 to disable (Default: 0).							
-	maxAirPatrols = 2;	
+	maxAirPatrols = 1;	
 	
 	//Probability of spawning Level 0/1/2/3 AI air vehicle patrol spawns. Probabilities should add up to 1.00		
 	levelChancesAir[] = {0.00,0.50,0.35,0.15};
@@ -314,14 +314,11 @@ class CfgA3XAISettings {
 	respawnAirMaxTime = 900;
 	
 	//Classnames of air vehicle types to use, with the maximum amount of each type to spawn.
-	//airVehicleList[] = {
-		//{"B_Heli_Light_01_armed_F",5},
-		//{"B_Heli_Transport_01_F",5},
-		//{"B_Heli_Transport_03_F",2}
-	//};
 	airVehicleList[] = {
-		{"B_Heli_Light_01_F",2}
+		{"DSR_UH1H_tka_F",5},
+		{"B_Heli_Transport_03_F",2}
 	};
+
 	
 	//Maximum number of gunner units per air vehicle. Limited by actual number of available gunner positions. (Default: 2)
 	//Affects: All AI air vehicle patrols, including custom and reinforcement.
@@ -352,7 +349,7 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/	
 
 	//Global maximum number of active AI land vehicle patrols. Set at 0 to disable (Default: 0).	
-	maxLandPatrols = 10;
+	maxLandPatrols = 5;
 	
 	//Probability of spawning Level 0/1/2/3 AI land vehicle spawns. Probabilities should add up to 1.00		
 	levelChancesLand[] = {0.00,0.50,0.35,0.15};
@@ -363,53 +360,8 @@ class CfgA3XAISettings {
 	
 	//Classnames of land vehicle types to use, with the maximum amount of each type to spawn.
 	landVehicleList[] = {
-		{"C_Hatchback_01_F",5},
-		{"C_Hatchback_01_sport_F",5},
-		{"C_Hatchback_01_grey_F",5},
-		{"C_Hatchback_01_green_F",5},
-		{"C_Hatchback_01_blue_F",5},
-		{"C_Hatchback_01_bluecustom_F",5},
-		{"C_Hatchback_01_beigecustom_F",5},
-		{"C_Offroad_01_F",5},
-		{"C_Offroad_01_repair_F",5},
-		{"B_G_Offroad_01_repair_F",5},
-		{"O_G_Offroad_01_repair_F",5},
-		{"I_G_Offroad_01_repair_F",5},
-		{"I_G_Offroad_01_F",5},
-		{"C_Hatchback_01_sport_white_F",5},
-		{"C_Hatchback_01_sport_grey_F",5},
-		{"C_Hatchback_01_sport_green_F",5},
-		{"C_SUV_01_F",5},
-		{"SUV_01_base_red_F",5},
-		{"SUV_01_base_black_F",5},
-		{"SUV_01_base_grey_F",5},
-		{"SUV_01_base_orange_F",5},
-		{"C_Van_01_transport_F",5},
-		{"I_G_Van_01_transport_F",5},
-		{"C_Van_01_box_F",5},
-		{"C_Van_01_fuel_F",5},
-		{"I_G_Van_01_fuel_F",5},
-		{"B_G_Van_01_transport_F",5},
-		{"O_G_Van_01_transport_F",5},
-		{"B_G_Van_01_fuel_F",5},
-		{"O_G_Van_01_fuel_F",5},
-		{"C_Van_01_transport_white_F",5},
-		{"C_Van_01_transport_red_F",5},
-		{"C_Van_01_box_white_F",5},
-		{"C_Van_01_box_red_F",5},
-		{"C_Van_01_fuel_white_F",5},
-		{"C_Van_01_fuel_red_F",5},
-		{"C_Van_01_fuel_white_v2_F",5},
-		{"C_Van_01_fuel_red_v2_F",5},
-		{"I_C_Van_01_transport_F",5},
-		{"I_C_Van_01_transport_brown_F",5},
-		{"I_C_Van_01_transport_olive_F",5},
-		{"C_Offroad_01_F",5},
-		{"C_Offroad_01_repair_F",5},
-		{"B_G_Offroad_01_repair_F",5},
-		{"O_G_Offroad_01_repair_F",5},
-		{"I_G_Offroad_01_repair_F",5},
-		{"I_G_Offroad_01_F",5}
+		{"DSR_Hilux_Open_1_F",5},
+		{"DSR_SUV_Camo_F",5}
 	};
 	
 	//Maximum number of gunner units per land vehicle. Limited by actual number of available gunner positions. (Default: 2)
@@ -430,13 +382,12 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/
 
 	//Maximum allowed number of simultaneous active reinforcements (Default: 5)
-	maxAirReinforcements = 5;
+	maxAirReinforcements = 1;
 	
 	//Air vehicles to use as reinforcement vehicles. Default: {"B_Heli_Transport_01_F","B_Heli_Light_01_armed_F"}
 	//Armed air vehicles will detect and engage players within reinforcement area. Unarmed air vehicles will deploy an AI paradrop group.
 	airReinforcementVehicles[] = {
-		"B_Heli_Transport_01_F",
-		"B_Heli_Light_01_armed_F"
+		"DSR_UH1H_tka_F"
 	};
 	
 	//Probability to spawn reinforcements for each AI level.
@@ -669,19 +620,19 @@ class CfgA3XAISettings {
 	--------------------------------------------------------------------------------------------------------------------*/
 
 	//Maximum number of weapons from pistolList, rifleList, machinegunList, sniperList found in vehicles recovered by players. (Default: 5)								
-	weaponLootVehicleCount = 5;
+	weaponLootVehicleCount = 2;
 	
 	//Maximum number of magazines to generate for each weapon loot added to vehicle inventory (Default: 3)
-	ammoLootPerWeapon = 3;
+	ammoLootPerWeapon = 2;
 	
 	//Maximum number of food loot items from foodLoot found in vehicles recovered by players. (Default: 10)								
-	foodLootVehicleCount = 10;
+	foodLootVehicleCount = 5;
 	
 	//Maximum number of items to select from miscLoot found in vehicles recovered by players. (Default: 10)											
-	miscLootVehicleCount = 10;
+	miscLootVehicleCount = 5;
 	
 	//Maximum number of items to select from medicalLoot found in vehicles recovered by players. (Default: 5)											
-	medicalLootVehicleCount = 5;
+	medicalLootVehicleCount = 2;
 	
 	
 	/*	AI loot probability settings. AI loot is pre-generated into a pool for each unit and randomly pulled to units as time passes.
@@ -740,20 +691,20 @@ class CfgA3XAISettings {
 	
 	//AI weapon classnames. Note: pistolList, rifleList, machinegunList, sniperList will not be read if generateDynamicWeapons is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	pistolList[] = {"hgun_ACPC2_F","hgun_P07_F","hgun_Pistol_heavy_01_F","hgun_Pistol_heavy_02_F","hgun_Rook40_F"};
-	rifleList[] = {"arifle_Katiba_C_F","arifle_Katiba_F","arifle_Katiba_GL_F","arifle_Mk20_F","arifle_Mk20_GL_F","arifle_Mk20_GL_plain_F","arifle_Mk20_plain_F","arifle_Mk20C_F","arifle_Mk20C_plain_F","arifle_MX_Black_F","arifle_MX_F","arifle_MX_GL_Black_F","arifle_MX_GL_F","arifle_MXC_Black_F","arifle_MXC_F","arifle_SDAR_F","arifle_TRG20_F","arifle_TRG21_F","arifle_TRG21_GL_F"};
-	machinegunList[] = {"arifle_MX_SW_Black_F","arifle_MX_SW_F","LMG_Mk200_F","LMG_Zafir_F","MMG_01_hex_F","MMG_01_tan_F","MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"};
-	sniperList[] = {"arifle_MXM_Black_F","arifle_MXM_F","srifle_DMR_01_F","srifle_DMR_02_camo_F","srifle_DMR_02_F","srifle_DMR_02_sniper_F","srifle_DMR_03_F","srifle_DMR_03_khaki_F","srifle_DMR_03_multicam_F","srifle_DMR_03_tan_F","srifle_DMR_03_woodland_F","srifle_DMR_04_F","srifle_DMR_04_Tan_F","srifle_DMR_05_blk_F","srifle_DMR_05_hex_F","srifle_DMR_05_tan_f","srifle_DMR_06_camo_F","srifle_DMR_06_olive_F","srifle_EBR_F","srifle_GM6_camo_F","srifle_GM6_F","srifle_LRR_camo_F","srifle_LRR_F"};
+	pistolList[] = {"DSR_hgun_M9_F","DSR_hgun_G17_F","hgun_Pistol_heavy_01_F","DSR_hgun_makarov_F","DSR_hgun_P07"};
+	rifleList[] = {"DSR_arifle_AKM_F","DSR_arifle_ak74_F","DSR_srifle_MK12_F","DSR_arifle_SCAR_F","DSR_Arifle_M16A2","DSR_Arifle_CZ805_A2","DSR_Arifle_M4A3","DSR_arifle_FNFAL_F"};
+	machinegunList[] = {"DSR_LMG_Mk200","MMG_01_tan_F","MMG_02_black_F","MMG_02_camo_F","MMG_02_sand_F"};
+	sniperList[] = {"DSR_Srifle_LRR","srifle_EBR_F","srifle_GM6_camo_F","DSR_srifle_SV98","DSR_Srifle_DMR_03","DSR_Srifle_DMR_03_Khaki","DSR_srifle_ENFIELD_F","dsr_srifle_dmr_old","srifle_DMR_02_F","srifle_DMR_04_F"};
 	
 	//AI weapon scope attachment settings. Note: weaponOpticsList will not be read if generateDynamicOptics is enabled.
 	weaponOpticsList[] = {"optic_NVS","optic_SOS","optic_LRPS","optic_AMS","optic_AMS_khk","optic_AMS_snd","optic_KHS_blk","optic_KHS_hex","optic_KHS_old","optic_KHS_tan","optic_DMS","optic_Arco","optic_Hamr","optic_MRCO","optic_Holosight","optic_Holosight_smg","optic_Aco","optic_ACO_grn","optic_Aco_smg","optic_ACO_grn_smg","optic_Yorris","optic_MRD"};
 	
 	//AI backpack types (for AI levels 0-3). Note: backpackTypes0-3 will not be read if generateDynamicBackpacks is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-	backpackTypes0[] = {"B_AssaultPack_blk","B_AssaultPack_cbr","B_AssaultPack_dgtl","B_AssaultPack_khk","B_AssaultPack_mcamo","B_AssaultPack_rgr","B_AssaultPack_sgg","B_OutdoorPack_blk","B_OutdoorPack_blu","B_OutdoorPack_tan"};
-	backpackTypes1[] = {"B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg","B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_ocamo","B_FieldPack_oucamo","B_OutdoorPack_blk","B_OutdoorPack_blu","B_OutdoorPack_tan","B_TacticalPack_blk","B_TacticalPack_mcamo","B_TacticalPack_ocamo","B_TacticalPack_oli","B_TacticalPack_rgr"};
-	backpackTypes2[] = {"B_Bergen_blk","B_Bergen_mcamo","B_Bergen_rgr","B_Bergen_sgg","B_Carryall_cbr","B_Carryall_khk","B_Carryall_mcamo","B_Carryall_ocamo","B_Carryall_oli","B_Carryall_oucamo","B_FieldPack_blk","B_FieldPack_cbr","B_FieldPack_ocamo","B_FieldPack_oucamo","B_HuntingBackpack","B_Kitbag_cbr","B_Kitbag_mcamo","B_Kitbag_sgg"};
-	backpackTypes3[] = {"B_Carryall_cbr","B_Carryall_khk","B_Carryall_mcamo","B_Carryall_ocamo","B_Carryall_oli","B_Carryall_oucamo","B_HuntingBackpack","B_Kitbag_cbr","B_Kitbag_mcamo","B_Kitbag_sgg"};
+	backpackTypes0[] = {"DSR_Largegunbag","DSR_Hiking_Backpack","DSR_Carryall_HunterF","DSR_Carryall_MHiker","DSR_Alice_Backpack","DSR_Coyote_Backpack","DSR_Civil_Assault_Backpack","DSR_Czech_Camo","DSR_Medical_Backpack","DSR_Rpg_Backpack","DSR_Assaultpack_Coyote"};
+	backpackTypes1[] = {"DSR_Largegunbag","DSR_Hiking_Backpack","DSR_Carryall_HunterF","DSR_Carryall_MHiker","DSR_Alice_Backpack","DSR_Coyote_Backpack","DSR_Civil_Assault_Backpack","DSR_Czech_Camo","DSR_Medical_Backpack","DSR_Rpg_Backpack","DSR_Assaultpack_Coyote"};
+	backpackTypes2[] = {"DSR_Largegunbag","DSR_Hiking_Backpack","DSR_Carryall_HunterF","DSR_Carryall_MHiker","DSR_Alice_Backpack","DSR_Coyote_Backpack","DSR_Civil_Assault_Backpack","DSR_Czech_Camo","DSR_Medical_Backpack","DSR_Rpg_Backpack","DSR_Assaultpack_Coyote"};
+	backpackTypes3[] = {"DSR_Largegunbag","DSR_Hiking_Backpack","DSR_Carryall_HunterF","DSR_Carryall_MHiker","DSR_Alice_Backpack","DSR_Coyote_Backpack","DSR_Civil_Assault_Backpack","DSR_Czech_Camo","DSR_Medical_Backpack","DSR_Rpg_Backpack","DSR_Assaultpack_Coyote"};
 	
 	//AI vest types (for AI levels 0-3). Note: vestTypes0-3 will not be read if generateDynamicVests is enabled.
 	//------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
